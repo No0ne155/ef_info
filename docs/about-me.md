@@ -17,3 +17,4 @@
 
 
 ![](./images/Cube.jpg)
+Dies ist ein  Bild von einem 7x7 Rubiks Cube mit dem sogenannten "Superflip" Muster
