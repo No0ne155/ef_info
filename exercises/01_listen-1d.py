@@ -12,7 +12,7 @@ noten = [3.5, 6, 5, 4.5]
 print(noten)
 print(noten[2])
 print(len(noten))
-print(noten[ len(noten) - 1 ])
+print(noten[len(noten) - 1])
 
 # 3) Schleife über alle Elemente der Liste
 for note in noten:
@@ -61,5 +61,5 @@ noten = []
 print(noten)
 
 # 14) Liste mit Strings
-noten =['gut', 'erfüllt', 'mangelhaft', 'erfüllt']
+noten = ['gut', 'erfüllt', 'mangelhaft', 'erfüllt']
 print(noten)
