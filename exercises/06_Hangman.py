@@ -47,7 +47,9 @@ def auswerten(valid_inp):
 def game_over():
     if len(falsch_geraten) > 10:
         print('YOU LOST')
+        return True
     else:
+        return False
         play()
 
 def play():
