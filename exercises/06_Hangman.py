@@ -29,7 +29,7 @@ def gewonnen():
     for buchstabe in gesucht:
         if buchstabe not in gefunden:
             return False
-        return True
+    return True
 
 #is_valid(inp) überprüft ob eingabe erlaubt ist
 
@@ -57,5 +57,8 @@ def play():
         wort = eingabe()
         auswerten(wort)
         show()
+        if gewonnen() is True:
+            print("You won!!")
+            exit()
 
 play()
