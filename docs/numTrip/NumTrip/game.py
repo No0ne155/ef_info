@@ -12,7 +12,7 @@ def game():
                 spielfeld[i].append(f"   {randomnumber}    ")
     for k in range(5):
         print(' |         |         |         |         |         |')
-        print(f"{k}|{spielfeld[i][0]}|{spielfeld[i][1]}|{spielfeld[i][2]}|{spielfeld[i][3]}|{spielfeld[i][4]}|")
+        print(f"{k}|{spielfeld[k][0]}|{spielfeld[k][1]}|{spielfeld[k][2]}|{spielfeld[k][3]}|{spielfeld[k][4]}|")
         print(' |         |         |         |         |         |')
         print(' +---------+---------+---------+---------+---------+')
 
