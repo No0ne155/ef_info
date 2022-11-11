@@ -3,15 +3,15 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const USERNAME = 'foobar';
-const REPO_NAME = 'repo';
+const USERNAME = 'No0ne155';
+const REPO_NAME = 'ef_info';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'Lern Blog',
   tagline: 'EF Informatik',
-  url: `https://${No0ne155}.github.io/`,
-  baseUrl: `/${ef_info}/`,
+  url: `https://${USERNAME}.github.io/`,
+  baseUrl: `/${REPO_NAME}/`,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
