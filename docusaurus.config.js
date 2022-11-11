@@ -10,8 +10,8 @@ const REPO_NAME = 'repo';
 const config = {
   title: 'Lern Blog',
   tagline: 'EF Informatik',
-  url: `https://${USERNAME}.github.io/`,
-  baseUrl: `/${REPO_NAME}/`,
+  url: `https://${No0ne155}.github.io/`,
+  baseUrl: `/${ef_info}/`,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
