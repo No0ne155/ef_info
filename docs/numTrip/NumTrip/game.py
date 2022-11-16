@@ -1,7 +1,9 @@
 from random import*
+from colorama import*
 spielfeld = [[], [], [], [], []]
-def game():
-    print('     01        02        03        04        05   ')
+def printfield():
+    global spielfeld
+    print('      0         1         2         3         4   ')
     print(' +---------+---------+---------+---------+---------+')
     for i in range(5):
         for j in range(5):
@@ -16,4 +18,24 @@ def game():
         print(' |         |         |         |         |         |')
         print(' +---------+---------+---------+---------+---------+')
 
+def game():
+    global playerinputX
+    global playerinputY
+    global spielfeld
+    printfield()
+    playerinputX = int(input("X-Axis you want to choose: "))
+    playerinputY = int(input("Y-Axis you want to choose: "))
+    check(playerinputX, playerinputY)
+
+def check(X, Y):
+    if spielfeld[X][Y] == spielfeld[X+1][Y]:
+        spielfeld[X+1][Y] = '    X    '
+    if spielfeld[X][Y] == spielfeld[X][Y+1]:
+        spielfeld[X][Y+1] = '    X    '
+    if spielfeld[X][Y] == spielfeld[X][Y-1]:
+        spielfeld[X][Y-1] = '    X    '
+    if spielfeld[X][Y] == spielfeld[X-1][Y]:
+        spielfeld[X-1][Y] = '    X    '
+    spielfeld[X][Y] = '    Y    '
+    game()
 game()
