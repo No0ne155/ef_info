@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>Lern Blog Blog</title>
+        <link>https://No0ne155.github.io/ef_info/</link>
+        <description>Lern Blog Blog</description>
+        <lastBuildDate>Fri, 26 Aug 2022 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>de</language>
+        <item>
+            <title><![CDATA[Wiedereinstieg Python]]></title>
+            <link>https://No0ne155.github.io/ef_info/2022/08/26/wiedereinstieg-python</link>
+            <guid>/2022/08/26/wiedereinstieg-python</guid>
+            <pubDate>Fri, 26 Aug 2022 00:00:00 GMT</pubDate>
+            <description><![CDATA[Heute, beim 2. mal EF, haben wir wieder mit Python angefangen, und einen Theorieblock gehabt.]]></description>
+            <content:encoded><![CDATA[<p>Heute, beim 2. mal EF, haben wir wieder mit Python angefangen, und einen Theorieblock gehabt.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="theorieblock">Theorieblock<a class="hash-link" href="#theorieblock" title="Direkter Link zur Überschrift">​</a></h2><p>Im Theorieblock haben wir <strong>Programmiersprachen</strong> angeschaut. Vor allem wie sie aufgebaut sind in den <strong>Sprachstufen</strong>. Ich will nicht einfach die Website abschreiben, also hier der Link: <a href="https://ofi.gbsl.website/24ef/Programmieren/Programmiersprachen" target="_blank" rel="noopener noreferrer">Programmiersprachen</a></p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="python">Python<a class="hash-link" href="#python" title="Direkter Link zur Überschrift">​</a></h2><p>Wir haben angefangen mit <strong>Turtle</strong> Python zu repetieren. Zum glück ist noch mehr oder weniger alles Präsent, jedoch gab es einige Tippfehler. Das liegt jedoch daran, dass die Übung fehlt. Am meisten ging der <code>:</code> bei einer <code>for</code> Schleife vergessen. Am zweitmeisten passierte ein fehler beim tippen von <code>forward</code>, <code>left</code> oder <code>right</code>. Jedoch kann man ja einfach <code>fd</code>, <code>lt</code> oder <code>rt</code> verwenden, wodurch das sehr minimiert wurde. </p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="blog">Blog<a class="hash-link" href="#blog" title="Direkter Link zur Überschrift">​</a></h2><p>Am schluss haben wir noch angefangen diesen Blog hier zu schreiben. Ich schreibe aber nicht gerne, weshalb er nicht sehr Kreativ ist.</p>]]></content:encoded>
+        </item>
+    </channel>
+</rss>
