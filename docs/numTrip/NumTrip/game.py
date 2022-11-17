@@ -1,6 +1,7 @@
 from random import*
 from colorama import*
 spielfeld = [[], [], [], [], []]
+checklist = []
 def printfield():
     global spielfeld
     print('      0         1         2         3         4   ')
@@ -30,12 +31,26 @@ def game():
 def check(X, Y):
     if spielfeld[X][Y] == spielfeld[X+1][Y]:
         spielfeld[X+1][Y] = '    X    '
+        checklist.append(X+1)
+        checklist.append(Y)
+        print(checklist)
     if spielfeld[X][Y] == spielfeld[X][Y+1]:
         spielfeld[X][Y+1] = '    X    '
+        checklist.append(X)
+        checklist.append(Y+1)
+        print(checklist)
     if spielfeld[X][Y] == spielfeld[X][Y-1]:
         spielfeld[X][Y-1] = '    X    '
+        checklist.append(X)
+        checklist.append(Y-1)
+        print(checklist)
     if spielfeld[X][Y] == spielfeld[X-1][Y]:
         spielfeld[X-1][Y] = '    X    '
+        checklist.append(X-1)
+        checklist.append(Y)
+        print(checklist)
     spielfeld[X][Y] = '    Y    '
     game()
+def setx():
+    pass
 game()
