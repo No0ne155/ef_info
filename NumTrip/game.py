@@ -2,6 +2,7 @@ from random import*
 spielfeld = [[], [], [], [], []]
 checklist = []
 removed = []
+playerinputs = []
 def printfield():
     global spielfeld
     print('\Y    0         1         2         3         4   ')
@@ -23,13 +24,16 @@ def game():
     global playerinputX
     global playerinputY
     global spielfeld
-    if len(checklist) > 0:
+    if len(checklist) > 120:
         check(checklist[0], checklist[1])
         checklist.pop(1)
         checklist.pop(0)
     printfield()
     playerinputX = int(input("X-Axis you want to choose: "))
     playerinputY = int(input("Y-Axis you want to choose: "))
+    playerinputs.append(playerinputX)
+    playerinputs.append(playerinputY)
+    print(playerinputs)
     check(playerinputX, playerinputY)
 
 def check(X, Y):
@@ -40,31 +44,28 @@ def check(X, Y):
             checklist.append(Y)
             removed.append(X+1)
             removed.append(Y)
-            print(checklist)
         if spielfeld[X][Y] == spielfeld[X][Y+1]:
           #  spielfeld[X][Y+1] = '         '
             checklist.append(X)
             checklist.append(Y+1)
             removed.append(X)
             removed.append(Y+1)
-            print(checklist)
         if spielfeld[X][Y] == spielfeld[X][Y-1]:
            # spielfeld[X][Y-1] = '         '
             checklist.append(X)
             checklist.append(Y-1)
             removed.append(X)
             removed.append(Y-1)
-            print(checklist)
         if spielfeld[X][Y] == spielfeld[X-1][Y]:
             #spielfeld[X-1][Y] = '         '
             checklist.append(X-1)
             checklist.append(Y)
             removed.append(X-1)
             removed.append(Y)
-            print(checklist)
-        #spielfeld[X][Y] = '         '
+        spielfeld[X][Y] = '         '
         removed.append(X)
         removed.append(Y)
+        print(checklist)
         print(f'removed:{removed}')
         game()
 
