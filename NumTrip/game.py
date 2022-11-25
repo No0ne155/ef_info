@@ -3,7 +3,7 @@ spielfeld = [[], [], [], [], []]
 checklist = []
 removed = []
 playerinputs = []
-def printfield():
+def printfieldstart():
     global spielfeld
     print('\Y    0         1         2         3         4   ')
     print('X+---------+---------+---------+---------+---------+')
@@ -28,9 +28,15 @@ def game():
         check(checklist[0], checklist[1])
         checklist.pop(1)
         checklist.pop(0)
-    printfield()
+    printfieldstart()
     playerinputX = int(input("X-Axis you want to choose: "))
+    if playerinputX != 0 or 1 or 2 or 3 or 4:
+        print('Fehlerhafte eingabe')
+        game()
     playerinputY = int(input("Y-Axis you want to choose: "))
+    if playerinputY != 0 or 1 or 2 or 3 or 4:
+        print('Fehlerhafte eingabe')
+        game()
     playerinputs.append(playerinputX)
     playerinputs.append(playerinputY)
     print(playerinputs)
@@ -68,6 +74,8 @@ def check(X, Y):
         print(checklist)
         print(f'removed:{removed}')
         game()
-
+    if spielfeld[X][Y] == '         ':
+        print("already chosen")
+        game()
 
 game()
