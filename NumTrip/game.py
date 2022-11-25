@@ -20,17 +20,35 @@ def printfieldstart():
         print(' |         |         |         |         |         |')
         print(' +---------+---------+---------+---------+---------+')
 
+def playerinputcheck(inp):
+    if not inp.isnumeric():
+        print('Is not Numeric')
+        return False
+    inp = int(inp)
+    if 0 <= inp and inp <= 4:
+        return True
+    print('Number out of range')
+    return False
+
 def game():
+    global spielfeld
     global playerinputX
     global playerinputY
-    global spielfeld
     if len(checklist) > 120:
         check(checklist[0], checklist[1])
         checklist.pop(1)
         checklist.pop(0)
     printfieldstart()
-    playerinputX = int(input("X-Axis you want to choose: "))
-    playerinputY = int(input("Y-Axis you want to choose: "))
+    playerinputX = input('X-Axis you want to choose: ')
+    while not playerinputcheck(playerinputX):
+        playerinputX = input('X-Axis you want to choose: ')
+        playerinputcheck(playerinputX)
+    playerinputX = int(playerinputX)
+    playerinputY = input('Y-Axis you want to choose:')
+    while not playerinputcheck(playerinputY):
+        playerinputY = input('X-Axis you want to choose: ')
+        playerinputcheck(playerinputY)
+    playerinputY = int(playerinputY)
     playerinputs.append(playerinputX)
     playerinputs.append(playerinputY)
     print(playerinputs)
