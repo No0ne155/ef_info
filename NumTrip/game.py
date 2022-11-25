@@ -30,13 +30,7 @@ def game():
         checklist.pop(0)
     printfieldstart()
     playerinputX = int(input("X-Axis you want to choose: "))
-    if playerinputX != 0 or 1 or 2 or 3 or 4:
-        print('Fehlerhafte eingabe')
-        game()
     playerinputY = int(input("Y-Axis you want to choose: "))
-    if playerinputY != 0 or 1 or 2 or 3 or 4:
-        print('Fehlerhafte eingabe')
-        game()
     playerinputs.append(playerinputX)
     playerinputs.append(playerinputY)
     print(playerinputs)
