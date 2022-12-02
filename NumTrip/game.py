@@ -52,7 +52,16 @@ def game():
     playerinputs.append(playerinputX)
     playerinputs.append(playerinputY)
     print(playerinputs)
-    check(playerinputX, playerinputY)
+    checkandremove(playerinputX, playerinputY, spielfeld[playerinputX][playerinputY], '         ')
+
+def checkandremove(x, y, oldvalue, newvalue):
+    if spielfeld[x][y] == oldvalue:
+        spielfeld[x][y] = newvalue
+        checkandremove(x,y+1,oldvalue,newvalue)
+        checkandremove(x,y-1,oldvalue,newvalue)
+        checkandremove(x+1,y,oldvalue,newvalue)
+        checkandremove(x-1,y,oldvalue,newvalue)
+        game()
 
 def check(X, Y):
     if spielfeld[X][Y] != '         ':
