@@ -1,5 +1,10 @@
 # Arbeiten am Numtrip
 
+## Besprechung Benutzereingaben
+
+Ich verglich mit Thomas den Code, und wir beide verwenden ein sehr ähnliches system, was die Besprechung kurz hielt.
+
+## Arbeiten Numtrip
 Als erstes habe ich den Auftrag gelesen, und ausgeführt.
 Ich passte das Programm von Wikipedia auf mein Programm an. Der Code sah wie folgt aus:
 ```
