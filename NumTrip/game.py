@@ -57,10 +57,14 @@ def game():
 def checkandremove(x, y, oldvalue, newvalue):
     if spielfeld[x][y] == oldvalue:
         spielfeld[x][y] = newvalue
-        checkandremove(x,y+1,oldvalue,newvalue)
-        checkandremove(x,y-1,oldvalue,newvalue)
-        checkandremove(x+1,y,oldvalue,newvalue)
-        checkandremove(x-1,y,oldvalue,newvalue)
+        if y+1 <= 4:
+            checkandremove(x,y+1,oldvalue,newvalue)
+        if y-1 >= 0:
+            checkandremove(x,y-1,oldvalue,newvalue)
+        if x+1 >= 0:
+            checkandremove(x+1,y,oldvalue,newvalue)
+        if x-1 <= 4:
+            checkandremove(x-1,y,oldvalue,newvalue)
         game()
 
 def check(X, Y):
