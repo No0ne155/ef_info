@@ -52,7 +52,7 @@ def game():
     playerinputs.append(playerinputX)
     playerinputs.append(playerinputY)
     print(playerinputs)
-    checkandremove(playerinputX, playerinputY, spielfeld[playerinputX][playerinputY], '         ')
+    check(playerinputX, playerinputY)
 
 def checkandremove(x, y, oldvalue, newvalue):
     if spielfeld[x][y] == oldvalue:
@@ -65,7 +65,6 @@ def checkandremove(x, y, oldvalue, newvalue):
             checkandremove(x+1,y,oldvalue,newvalue)
         if x-1 <= 4:
             checkandremove(x-1,y,oldvalue,newvalue)
-        game()
 
 def check(X, Y):
     if spielfeld[X][Y] != '         ':
@@ -97,10 +96,16 @@ def check(X, Y):
         removed.append(X)
         removed.append(Y)
         print(checklist)
-        print(f'removed:{removed}')
+        #print(f'removed:{removed}')
+        while len(checklist) > 0:
+            checkandremove(checklist[0], checklist[1], spielfeld[X][Y], '         ')
+            checklist.pop(1)
+            checklist.pop(0)
+            print(f'checklistt: {checklist}')
         game()
     if spielfeld[X][Y] == '         ':
         print("already chosen")
         game()
+        
 
 game()
