@@ -34,17 +34,13 @@ def game():
     global spielfeld
     global playerinputX
     global playerinputY
-    if len(checklist) > 120:
-        check(checklist[0], checklist[1])
-        checklist.pop(1)
-        checklist.pop(0)
     printfieldstart()
     playerinputX = input('X-Axis you want to choose: ')
     while not playerinputcheck(playerinputX):
         playerinputX = input('X-Axis you want to choose: ')
         playerinputcheck(playerinputX)
     playerinputX = int(playerinputX)
-    playerinputY = input('Y-Axis you want to choose:')
+    playerinputY = input('Y-Axis you want to choose: ')
     while not playerinputcheck(playerinputY):
         playerinputY = input('X-Axis you want to choose: ')
         playerinputcheck(playerinputY)
@@ -52,19 +48,20 @@ def game():
     playerinputs.append(playerinputX)
     playerinputs.append(playerinputY)
     print(playerinputs)
-    check(playerinputX, playerinputY)
+    checkandremove(playerinputX, playerinputY, spielfeld[playerinputX][playerinputY], '         ')
+    game()
 
 def checkandremove(x, y, oldvalue, newvalue):
-    if spielfeld[x][y] == oldvalue:
-        spielfeld[x][y] = newvalue
-        if y+1 <= 4:
-            checkandremove(x,y+1,oldvalue,newvalue)
-        if y-1 >= 0:
-            checkandremove(x,y-1,oldvalue,newvalue)
-        if x+1 >= 0:
-            checkandremove(x+1,y,oldvalue,newvalue)
-        if x-1 <= 4:
-            checkandremove(x-1,y,oldvalue,newvalue)
+    if x < 0 or x >= len(spielfeld[0]) or y < 0 or y >= len(spielfeld):
+        return
+    if spielfeld[y][x] != oldvalue:
+        return
+    spielfeld[y][x] = newvalue
+    checkandremove(x,y+1,oldvalue,newvalue)
+    checkandremove(x,y-1,oldvalue,newvalue)
+    checkandremove(x+1,y,oldvalue,newvalue)
+    checkandremove(x-1,y,oldvalue,newvalue)
+    return
 
 def check(X, Y):
     if spielfeld[X][Y] != '         ':
