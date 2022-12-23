@@ -20,6 +20,7 @@ def printfieldstart():
         print(' |         |         |         |         |         |')
         print(' +---------+---------+---------+---------+---------+')
 
+
 def playerinputcheck(inp):
     if not inp.isnumeric():
         print('Is not Numeric')
@@ -51,8 +52,14 @@ def game():
     checkandremove(playerinputX, playerinputY, spielfeld[playerinputX][playerinputY], '         ')
     game()
 
+def movedown(x, y):
+    if x == 0:
+        spielfeld[x][y] == 2**(randint(1,4))
+    elif x > 0:
+        spielfeld[x][y]
+
 def checkandremove(x, y, oldvalue, newvalue):
-    if x < 0 or x >= len(spielfeld[0]) or y < 0 or y >= len(spielfeld):
+    if x < 0 or x >= 4 or y < 0 or y >= 4:
         return
     if spielfeld[y][x] != oldvalue:
         return
