@@ -7,8 +7,8 @@ playerinputs = []
 def printfieldstart():
     global spielfeld
     global spielfeldnice
-    print('\Y    0         1         2         3         4   ')
-    print('X+---------+---------+---------+---------+---------+')
+    print('\X    0         1         2         3         4   ')
+    print('Y+---------+---------+---------+---------+---------+')
     for i in range(5):
         for j in range(5):
             randomnumber = 2**(randint(1,4))
@@ -47,8 +47,6 @@ def checkandremove(x, y, oldvalue, newvalue):
 
 def game():
     global spielfeld
-    global playerinputX
-    global playerinputY
     printfieldstart()
     playerinputX = input('X-Axis you want to choose: ')
     while not playerinputcheck(playerinputX):
@@ -60,9 +58,6 @@ def game():
         playerinputY = input('X-Axis you want to choose: ')
         playerinputcheck(playerinputY)
     playerinputY = int(playerinputY)
-    playerinputs.append(playerinputX)
-    playerinputs.append(playerinputY)
-    print(playerinputs)
     checkandremove(playerinputX, playerinputY, spielfeld[playerinputX][playerinputY], '         ')
     game()
 

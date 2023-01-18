@@ -43,7 +43,7 @@ def game():
     playerinputX = int(playerinputX)
     playerinputY = input('Y-Axis you want to choose: ')
     while not playerinputcheck(playerinputY):
-        playerinputY = input('X-Axis you want to choose: ')
+        playerinputY = input('Y-Axis you want to choose: ')
         playerinputcheck(playerinputY)
     playerinputY = int(playerinputY)
     playerinputs.append(playerinputX)
