@@ -1,6 +1,6 @@
 from random import*
 spielfeld = [[],[],[],[],[]]
-
+goal = 128
 def printfield():
     global spielfeld
     spielfeldnice = [[],[],[],[],[]]
@@ -35,6 +35,8 @@ def playerinputcheck(inp):
     return False
 
 def gameloop():
+    if loose() == False:
+        print('You Lost.')
     printfield()
     playerinputX = input('X-Axis you want to choose: ')
     while not playerinputcheck(playerinputX):
@@ -50,11 +52,15 @@ def gameloop():
     if spielfeld[playerinputY][playerinputX+1] == spielfeld[playerinputY][playerinputX] or spielfeld[playerinputY][playerinputX-1] == spielfeld[playerinputY][playerinputX] or spielfeld[playerinputY-1][playerinputX] == spielfeld[playerinputY][playerinputX] or spielfeld[playerinputY+1][playerinputX] == spielfeld[playerinputY][playerinputX]:
         checkandremove(playerinputY, playerinputX, spielfeld[playerinputY][playerinputX], 0)       
         spielfeld[playerinputY][playerinputX] = wert*2
-        print('remove')
     else:
         print('no Neighbour fields')
     movedown()
-    gameloop()
+    while win() is not True:
+        gameloop()
+    if win() == True:
+        printfield()
+        print(f'You Won. You scored {goal} Points in one Field')
+        pass
 
 def checkandremove(y, x, oldvalue, newvalue):
     if x < 0 or x > 4 or y < 0 or y > 4:
@@ -68,23 +74,40 @@ def checkandremove(y, x, oldvalue, newvalue):
     checkandremove(y-1,x,oldvalue,newvalue)
     return
 
+def validateneighbour(x,y):
+    pass
 
 def movedown():
     for zeile in range(4,-1,-1):
-        for spalte in range(4,0,-1):
+        for spalte in range(4,-1,-1):
             if spielfeld[zeile][spalte] == 0:
                 if spielfeld[0][spalte] == 0:
                     spielfeld[zeile][spalte] = 2**(randint(1,4))
-                    print('zeile = 0')
                 elif spielfeld[zeile-1][spalte] == 0:
                     spielfeld[zeile][spalte] = 2**(randint(1,4))
-                    print('zeilespalte = 0')
                 else:
                     spielfeld[zeile][spalte] = spielfeld[zeile -1][spalte]
                     spielfeld[zeile-1][spalte] = 0
-                    print('else')
-                
 
+def loose():
+    for zeile in range(5):
+        for spalte in range(5):
+            if spielfeld[zeile][spalte] == spielfeld[zeile +1][spalte]:
+                return True
+            elif spielfeld[zeile][spalte] == spielfeld[zeile -1][spalte]:
+                return True
+            elif spielfeld[zeile][spalte] == spielfeld[zeile +1][spalte-1]:
+                return True
+            elif spielfeld[zeile][spalte] == spielfeld[zeile][spalte+1]:
+                return True
+            else:
+                return False
+
+def win():
+    for zeile in range(5):
+        if goal in spielfeld[zeile]:
+            return True
+            
     
 
 generatefield()
