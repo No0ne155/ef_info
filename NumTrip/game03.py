@@ -74,8 +74,8 @@ def checkandremove(y, x, oldvalue, newvalue):
     checkandremove(y-1,x,oldvalue,newvalue)
     return
 
-def validateneighbour(x,y):
-    pass
+
+shfaksjhfdlkajdhflkjad
 
 def movedown():
     for zeile in range(4,-1,-1):
