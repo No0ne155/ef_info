@@ -5,21 +5,21 @@ goal = 128 #setzt den zielwert
 def printfield(): #Funktion die das Spielfeld mit den Aktuellen werten der Spielfeld-Liste ausgibt
     global spielfeld
     spielfeldnice = [[],[],[],[],[]]
-    print('\X    0         1         2         3         4   ')
-    print('Y+---------+---------+---------+---------+---------+')
+    print('\033[94m'+f'∖'+'\033[0m'+'\033[96m'+'X    0         1         2         3         4   '+'\033[0m')
+    print('\033[96m'+f'Y'+'\033[0m'+'\033[94m'+f'+---------+---------+---------+---------+---------+'+'\033[0m')
     for i in range(5): #wiederholt für jede zeile
         for j in range(5): #wiederholt für jede spalte
-            if spielfeld[i][j] < 10: #überprüft die länge, und fügt entsprechend Leerzeichen an.
+            if spielfeld[i][j] < 10: #überprüft die länge, und fügt entsprechend Leerzeichen an.⇱◢◤∖
                 spielfeldnice[i].append(f"    {spielfeld[i][j]}    ")
             elif spielfeld[i][j] < 100:
                 spielfeldnice[i].append(f"   {spielfeld[i][j]}    ")
             elif spielfeld[i][j] < 1000:
                 spielfeldnice[i].append(f'   {spielfeld[i][j]}   ')
     for k in range(5): #gibt das schöne feld aus
-        print(' |         |         |         |         |         |')
-        print(f"{k}|{spielfeldnice[k][0]}"+"|"+f"{spielfeldnice[k][1]}|{spielfeldnice[k][2]}|{spielfeldnice[k][3]}|{spielfeldnice[k][4]}|")
-        print(' |         |         |         |         |         |')
-        print(' +---------+---------+---------+---------+---------+')
+        print('\033[94m'+f' |         |         |         |         |         |'+'\033[0m')
+        print('\033[96m'+f'{k}'+'\033[0m'+'\033[94m'+f'|'+'\033[0m'+f'{spielfeldnice[k][0]}'+'\033[94m'+f'|'+'\033[0m'+f'{spielfeldnice[k][1]}'+'\033[94m'+f'|'+'\033[0m'+f'{spielfeldnice[k][2]}'+'\033[94m'+f'|'+'\033[0m'+f'{spielfeldnice[k][3]}'+'\033[94m'+f'|'+'\033[0m'+f'{spielfeldnice[k][4]}'+'\033[94m'+f'|'+'\033[0m')
+        print('\033[94m'+f' |         |         |         |         |         |'+'\033[0m')
+        print('\033[94m'+f' +---------+---------+---------+---------+---------+'+'\033[0m')
 
 def generatefield(): #füllt das Spielfeld mit Zufallszahlen
     for l in range(5):
@@ -64,7 +64,7 @@ def gameloop(): #die Main Game Funktion
         gameloop()
     if win() == True: #wenn gewonnen dann wird das Feld noch einmal ausgegeben
         printfield()
-        print('\033[92m'+f'You Won. You scored {goal} Points in one Field'+'\033[0m') #und eine Gewinnernachricht ausgegeben
+        print('\033[96m '+f'You Won. You scored {goal} Points in one Field'+'\033[0m') #und eine Gewinnernachricht ausgegeben
         quit() #beendet das Programm sofort
 
 def checkandremove(y, x, oldvalue, newvalue): #überprüft nachbaren, und setzt diese zu 0
