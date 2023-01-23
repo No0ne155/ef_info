@@ -1,5 +1,5 @@
 from random import*
-#spielfeld = [[16,16,4,8,16],[2,4,8,16,1],[4,8,16,1,2],[8,16,1,2,4],[16,1,2,4,8]]
+#spielfeld = [[16,16,4,8,16],[2,4,8,16,1],[4,8,16,1,2],[8,16,1,2,4],[16,1,2,4,8]] #spielfeld zum einfach verlieren
 spielfeld = [[],[],[],[],[]]
 goal = 128 #setzt den zielwert
 def printfield(): #Funktion die das Spielfeld mit den Aktuellen werten der Spielfeld-Liste ausgibt
@@ -64,7 +64,7 @@ def gameloop(): #die Main Game Funktion
         gameloop()
     if win() == True: #wenn gewonnen dann wird das Feld noch einmal ausgegeben
         printfield()
-        print('\033[96m '+f'You Won. You scored {goal} Points in one Field'+'\033[0m') #und eine Gewinnernachricht ausgegeben
+        print('\033[92m '+f'You Won. You scored {goal} Points in one Field'+'\033[0m') #und eine Gewinnernachricht ausgegeben
         quit() #beendet das Programm sofort
 
 def checkandremove(y, x, oldvalue, newvalue): #überprüft nachbaren, und setzt diese zu 0
