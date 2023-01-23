@@ -1,18 +1,29 @@
 # NumTrip Top Down Entwurf
 
-Top-Down Entwurf:
+## Top-Down Entwurf:
 
-![](./images/topdown.png)
+![](./images/topdown_new.png)
 
-Der Top-Down Entwurf hat auf der Obersten Ebene das NumTrip-Game. Dies kann man zuerst aufteilen auf:
-+ Feld Generieren
-    + Aus Random Zahlen
-+ Feld Anzeigen
-    + Schöne Darstellung (Raster Rundherum)
-    + Überprüfung der Zahlenlänge, für schöne darstellung
-+ Input des Spielers
-    + Verdopple das Ausgewählte Feld, wenn mindestens ein anderes Umliegendes Feld ebenfalls diese Zahl enthält
-    + Überprüft ob andere Felder rundherum die gleiche Zahl haben
-        + Zahlen die weiter oben sind, werden nach unten bewegt
-        + Falls keine Zahlen weiter oben sind, Generiere neue Zahlen in den Feldern
-    + Überprüfen ob die Eingabe eine Zahl zwischen 0 und 5 ist
+Der Top-Down Entwurf hat auf der Obersten Ebene das NumTrip-Game. Dies teilt man nun in immer kleinere Teilprobleme auf, bis man viele kleine dinge hat, die einfacher sind. Diese fügt man dann zusammen, damit man ein komplettes Projekt hat. Für das NumTrip spiel konnte ich es so unterteilen: 
++ ## Feld
+    + ### Generieren
+        + Random Zahlen verwenden
+    + ### Ausgeben
+        + Feld in schönem Layout mit Zahlen aus Liste ausgeben
++ ## Ende
+    + ### Gewinnen
+        + Ein Feld hat den im code gesetzten endwert erreicht
+        + Spiel beenden, Gewinnnachricht anzeigen, Feld nochmals anzeigen
+    + ### Verlieren
+        + Keine möglichkeit mehr ein Feld zu wählen
+        + Endnachricht anzeigen, Feld nochmals Anzeigen, Spiel beenden
++ ## Spielerinteraktion
+    + ### Erfragen
+        + Solange bis der Input als Valide bestätigt wurde
+    + ### Validieren
+        + Ist der Input eine Zahl?
+        + Ist der Input im Spielfeld?
+    + ### Reagieren
+        + Die umliegenden Felder mit der gleichen Zahl entfernen
+        + Das ausgewählte Feld Verdoppeln
+        + Die Felder oberhalb der Nachbarfelder nach unten bewegen
