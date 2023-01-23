@@ -53,4 +53,6 @@ Wenn du auch so ein Programm schreibst, überleg dir manchmal zuerst, was du sp�
 Ebenfalls ist es hilfreich, wenn du deinen Funktionen und Variabeln namen gibst, die dir Klar machen, was sie tun, sodass du den Überblick behälst. Aber mach die Namen auch nicht zu lange, denn es kann sehr mühsam sein, den namen `spielfeldnice[playerinputY][playerinputX]` in einer Funktion 4 mal zu schreiben.
 
 ## Fazit
-Mit mehr Zeit, wären noch viele Features mehr möglich gewesen. Da man aber nicht immer viel Zeit hat, sich die Zeit nicht nimmt, oder ein Problem hat, dass sich einfach nicht lösen will, bin ich ganz zufrieden mit meinem Resultat. Am Anfang stockte es, doch als ich im Neugeschriebenen Programm (fast) alle Probleme gefunden hatte, ging alles sehr schnell. Weitere Features zu implementieren wären nicht die Komplizierteste sache, jedoch muss man es machen, und nicht nur darüber Nachdenken.
+Mit mehr Zeit, wären noch viele Features mehr möglich gewesen. Da man aber nicht immer viel Zeit hat, sich die Zeit nicht nimmt, oder ein Problem hat, dass sich einfach nicht lösen will, bin ich ganz zufrieden mit meinem Resultat. Am Anfang stockte es, doch als ich im Neugeschriebenen Programm (fast) alle Probleme gefunden hatte, ging alles sehr schnell. Weitere Features zu implementieren wären nicht die Komplizierteste sache, jedoch muss man es machen, und nicht nur darüber Nachdenken
+
+Allem in allem war es ein Tolles Projekt.
