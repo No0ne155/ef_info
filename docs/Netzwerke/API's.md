@@ -9,7 +9,7 @@ Das JSON Format ist ein Speicherformat welches im Web häufig angewendet wird. Z
 {
     "kruste": "original",
     "belag": ["käse", "wurst", "knoblauch"],
-    "status": "am kochen"
+    "status": "vorbereiten"
 }
 ```
 Mit diesem Dateiformat kann man sogenannte `Keys` und `Values` mitgeben. Diese können von einer API ausgelesen serden.
