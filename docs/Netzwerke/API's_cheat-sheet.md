@@ -2,6 +2,7 @@
 
 ## Was ist eine API?
 Eine API ist wie eine Website, aber designt dafür, dass ein Computer sie versteht. Es ist die Schnittstelle im Server, die die Menschliche Information in Computersprache übersetzt. Eine API kann aber noch viel mehr machen...
+Der unterschied von einem Webserver zu einer API ist, dass die API einfacher für den Computer zu Interpretieren ist.
 
 ## JSON Format
 Das JSON Format ist ein Speicherformat welches im Web häufig angewendet wird. Z.b.:
