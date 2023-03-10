@@ -56,9 +56,8 @@ def gameloop(): #die Main Game Funktion
     if validateneighbour(playerinputX, playerinputY) == True: #überprüft ob ein nachbar vorhanden ist
         checkandremove(playerinputY, playerinputX, spielfeld[playerinputY][playerinputX], 0)       
         spielfeld[playerinputY][playerinputX] = wert*2 #verdoppelt den Wert des ausgewählten Feldes
-    elif validateneighbour(playerinputX, playerinputY) == False: #wenn kein nachbar dann:
-        print('no Neighbour fields')
-        gameloop()
+    print('no Neighbour fields')
+    gameloop()
     movedown()#bewegt alles nach unten
     while win() is not True: #solange nicht gewonnen, wird der Gameloop wiederholt
         gameloop()

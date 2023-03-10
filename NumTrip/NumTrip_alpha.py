@@ -79,7 +79,7 @@ def check(X, Y):
             removed.append(X+1)
             removed.append(Y)
         if spielfeld[X][Y] == spielfeld[X][Y+1]:
-          #  spielfeld[X][Y+1] = '         '
+          # spielfeld[X][Y+1] = '         '
             checklist.append(X)
             checklist.append(Y+1)
             removed.append(X)
