@@ -34,3 +34,5 @@ Zum grossen Finale wird nun eine http Response gemacht, damit Postman auch unser
 ## Schlusswort / Fazit
 
 Die API auf unserem NODE-RED server kommuniziert mit Postman. Die beiden Individuellen Programme übersetzen unsere Menschensprache in Emojis, und tun dies, ohne dass wir selbst etwas tun müssen. Die Automation finde ich persönlich sehr toll.
+
+Ich bin gespannt, was wir mit NODE-RED sonst noch für API's machen werden.
