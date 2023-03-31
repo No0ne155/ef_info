@@ -29,14 +29,40 @@ Wie im Bild dargestellt verbinden sich die Switches eines Netzwerk mit dem Route
 
 Die Router Tabelle besteht aus allen Netzwerken die eine Router kennt, und mit jeder anfrage zu einem Neuen Server wird diese Tabelle grösser. So lernt der Router immer mehr, und "Lernt".
 
-### Noch zu bearbeitende Punkte:
+## MAC-Adresse
 
-MAC-Adresse
+Die MAC - Adresse (Media-Access-Control-Adress) ist die Individuelle Adresse eines NIC (Network Interface Card). NIC ermöglicht Kommunikation mit der Physischen schicht, weshalb dort die Individuelle Adresse ist. Denn die IP bezieht sich auf das Netzwerk, und kann sich je nach Netzwerk ändern.
+
+![](img/mac.png)
+
+MAC-Adressen bestehen aus 48 Bits, die als 12 Hexadezimale zeichen angegeben werden. Die MAC-Adresse ist die Individuelle, unverwechselbare Adresse eines Gerätes mit Internetzugang.
+
+### MAC-Tabelle
+
+Die MAC-Tabelle beinhaltet alle MAC-Adressen die ein Gerät mit NIC kennt. Dies beinhaltet auch die MAC-Adressen von Routern und Switches.
+
+## ARP
+
+ARP (Adress-Resolution-Protocol) wird verwendet, um die IP-Adresse mit der MAC-Adresse zu verknüpfen.
+
+### ARP ohne Router
+ARP-Request wird verwendet, wenn der Host die Ziel-IP-Adresse kennt, aber die MAC-Adresse der IP nicht kennt.
+
+![](img/arp2.png)
+
+Der Host sendet nun einen ARP-Request an die IP des Servers, mit der MAC-Adresse ffff.ffff.ffff, da diese für diesen fall reserviert ist. Im ARP-Request ist die MAC-Adresse und IP des Hostes enthalten, damit der Ziel-Server problemlos antworten kann. 
+
+Der Ziel-Server antwortet nun mit seiner IP und MAC-Adresse, und fügt die IP und MAC-Adresse seinem ARP-Cache zu.
+
+![](img/arp3.png)
+
+Sobald diese Nachricht beim Host ankam, kann er seinen Layer-2 Header mit der MAC-Adresse ergänzen, und seine Nachricht schicken. Von nun an, ist die IP mit der MAC-Adresse bei beiden im ARP-Cache gespeichert, und dieser Schritt kann übersprungen werden.
+
+### ARP mit Router
+
+(:
+### Noch zu bearbeitende Punkte:
 
 Gateway
 
-Mac-Tabelle
-
 Ethernet-Frame
-
-ARP
