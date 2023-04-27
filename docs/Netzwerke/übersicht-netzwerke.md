@@ -5,6 +5,13 @@ Zusammenfassung zu den Punkten der Kapitel 3 - 8
 ## Switch
 
 Ein Switch ist ein Gerät, welches im lokalen Netzwerk weiss, welcher Host wo ist, und ein Paket nur an den Richtigen Host weiterleitet, und nicht an alle eine Kopie sendet. 
+- Switches werden im Lokalen Netzwerk verwendet
+- In der MAC-Tabelle des Switches, wird gespeichert welche IP / MAC adresse zu welchem Port gehört, um korrekt zu Kommunizieren
+- Arbeitet nach 3 Schritten: 
+    - `learn`: MAC-Tabelle updaten
+    - `flood`: An alle Ports kopie sendn (Ausser Host), wird nur verwendet, wenn Adresse nicht in Tabelle ist.
+    - `forward`: Mit MAC-Adressen-Tabelle das Paket an den Richtigen Client seden
+- Der unterschied zwischen `flood` und `forward` ist, dass beim `flood` die MAC-Adresse `ffff.ffff.ffff` ist. Bei `forward` ist es die Spezifische MAC-Adresse.
 
 ![](img/switch.png)
 
@@ -25,9 +32,19 @@ Der Router ist ein Gerät, welches Netzwerke untereinander verbindet. Das Intern
 
 Wie im Bild dargestellt verbinden sich die Switches eines Netzwerk mit dem Router, der die Netzwerke untereinander verbindet, jedoch auch mit dem Internet verbindet.
 
+Router sind meistens in Hirarchien angeordnet um den Netzwerkverker zu vereinfachen. (siehe darstellung)
+
+![](img/router1.png)
+
 ### Router Tabelle
 
 Die Router Tabelle besteht aus allen Netzwerken die eine Router kennt, und mit jeder anfrage zu einem Neuen Server wird diese Tabelle grösser. So lernt der Router immer mehr, und "Lernt".
+Man kann es sich wie als "Karte" aller bereits verwendeten Netzwerkverbindungen sehen.
+
+Es gibt 3 Arten wie die Routing Tabelle verwendet wird:
+- `Direkt Verbunden`: Router zwischen Netzwerken die Direkt miteinander verbunden sind
+- `Statische Routen`: Routen die vom Administrator Manuell vorgegeben werden
+- `Dynamische Routen`: Routen die von anderen Routern gelernt werden
 
 ## MAC-Adresse
 
@@ -58,11 +75,39 @@ Der Ziel-Server antwortet nun mit seiner IP und MAC-Adresse, und fügt die IP un
 
 Sobald diese Nachricht beim Host ankam, kann er seinen Layer-2 Header mit der MAC-Adresse ergänzen, und seine Nachricht schicken. Von nun an, ist die IP mit der MAC-Adresse bei beiden im ARP-Cache gespeichert, und dieser Schritt kann übersprungen werden.
 
+![](img/arp-proces.gif)
+
 ### ARP mit Router
 
-(:
+- Der Host sendet wieder einen ARP-Request raus
+- Der erste Router empfängt den Request und fügt die angegebene Host-Angaben seiner Tabelle hinzu
+- Router 1 sendet seine Angaben an den Host zurück
+- Host sendet Paket an Router 1
+- Router 1 empfängt packet, und entfernt seine eigenen Informationen
+- Router 1 sucht nach der Ziel MAC, die er nicht hat,  und sendet deshalb einen ARP Request an den zweiten Router
+- Router 2 sendet seine Angaben an Router 1 zurück
+- Router 1 sendet Paket an Router 2
+- Router 2 empfängt und entpackt das Paket
+- Router 2 sucht nach Ziel MAC in seiner Tabelle
+- Router 2 sendet ARP Request an Zielcomputer
+- Zielcomputer sendet seine Angaben
+- Router 2 sendet Paket an Zielcomputer, welches nun das Paket hat
+- Die Antwort kann ohne schwierikeit das Netzwerk durchqueren, da alle weiteren MAC-Adressen in Tabellen eingetragen wurden
+- Jeder Weitere Netzverkehr zwischen den beiden ist nun sehr einfach.
+
+![](img/arp4.png)
+
+
+## Weitere Infos:
+
+Protokolle:
+![](img/protocols.png)
+
+Anwendungsbeispiel:
+[Youtube Video Zusammenfassung](https://www.youtube.com/watch?v=YJGGYKAV4pA)
+
 ### Noch zu bearbeitende Punkte:
 
-Gateway
+??Gateway??
 
-Ethernet-Frame
+??Ethernet-Frame??
