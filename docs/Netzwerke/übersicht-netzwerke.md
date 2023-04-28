@@ -106,8 +106,12 @@ Protokolle:
 Anwendungsbeispiel:
 [Youtube Video Zusammenfassung](https://www.youtube.com/watch?v=YJGGYKAV4pA)
 
-### Noch zu bearbeitende Punkte:
+## Gateway
 
-??Gateway??
+Das Standart-Gateway ist die Verbindung die normalerweise als Erstes verwendet wird. Meistens ist dies der Router.
 
-??Ethernet-Frame??
+## Ethernet-Frame
+
+Nachrichten in einem LAN werden in Form von Frames ausgetauscht. Ist dieses Kabelgebunden wird auch von Ethernet-Frames gesprochen. Ein Ethernet-Frame ist wie folgt aufgebaut:
+
+![](img/ethernetframe.png)
